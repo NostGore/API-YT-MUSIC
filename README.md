@@ -28,7 +28,7 @@ Abrir `http://localhost:5000` en el navegador.
 ## Estructura
 
 ```
-ytm-player/
+API-YT-MUSIC/
 ├── app.py                  # Entry point
 ├── backend/
 │   ├── server.py           # Rutas Flask
