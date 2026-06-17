@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YTM Player</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">&#9835; YTM<span>Player</span></div>
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="searchInput" placeholder="Buscar canciones, artistas..." autofocus>
+    <button class="clear" id="clearBtn"><i class="fas fa-times"></i></button>
+  </div>
+</header>
+
+<main>
+  <div id="status">
+    <div class="empty-icon">&#9835;</div>
+    <div class="empty-text">Busca tu canci&oacute;n favorita<br>y reproducela al instante</div>
+  </div>
+  <div class="section-label" id="resultsLabel" style="display:none">Resultados</div>
+  <div id="results"></div>
+</main>
+
+<div id="player">
+  <div class="p-thumb"><img id="pThumb" src="" alt=""></div>
+  <div class="p-info">
+    <div class="p-title" id="pTitle"></div>
+    <div class="p-artist" id="pArtist"></div>
+  </div>
+  <div class="p-ctrls">
+    <div class="p-btns">
+      <button class="btn-prev" id="btnPrev" title="Anterior"><i class="fas fa-step-backward"></i></button>
+      <button class="btn-play" id="btnPlay" title="Reproducir"><i class="fas fa-play"></i></button>
+      <button class="btn-next" id="btnNext" title="Siguiente"><i class="fas fa-step-forward"></i></button>
+    </div>
+    <div class="p-progress">
+      <span id="currentTime">0:00</span>
+      <input type="range" id="seek" min="0" max="100" value="0">
+      <span id="totalTime">0:00</span>
+    </div>
+  </div>
+  <div class="p-extra">
+    <div class="p-volume">
+      <button id="btnMute" title="Silenciar"><i class="fas fa-volume-up"></i></button>
+      <input type="range" id="volumeRange" min="0" max="1" step="0.05" value="0.7">
+    </div>
+  </div>
+  <button id="pClose" title="Cerrar"><i class="fas fa-chevron-down"></i></button>
+</div>
+
+<audio id="audio" preload="auto"></audio>
+
+<script src="/static/js/player.js"></script>
+</body>
+</html>
